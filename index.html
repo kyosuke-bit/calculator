@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>sample</title>
+</head>
+<body>
+  <input class="display" type="text" id="result">
+  
+<div>
+    <input class="button" type="button" value="7" onclick="edit(this)">
+    <input class="button" type="button" value="8" onclick="edit(this)">
+    <input class="button" type="button" value="9" onclick="edit(this)">
+    <input class="button" type="button" value="+" onclick="edit(this)">
+</div>
+<div>
+    <input class="button" type="button" value="4" onclick="edit(this)">
+    <input class="button" type="button" value="5" onclick="edit(this)">
+    <input class="button" type="button" value="6" onclick="edit(this)">
+    <input class="button" type="button" value="-" onclick="edit(this)">
+</div>
+<div>
+    <input class="button" type="button" value="1" onclick="edit(this)">
+    <input class="button" type="button" value="2" onclick="edit(this)">
+    <input class="button" type="button" value="3" onclick="edit(this)">
+    <input class="button"type="button" value="*" onclick="edit(this)">
+</div>
+<div>
+    <input class="button" type="button" value="0" onclick="edit(this)">
+    <input class="button" type="button" value="00" onclick="edit(this)">
+    <input class="button" type="button" value="." onclick="edit(this)">
+    <input class="button" type="button" value="/" onclick="edit(this)">
+</div>
+<div class="buttons">
+    <input class="button_two" type="button" value="AC" onclick="init()">
+    <input class="button_two" type="button" value="=" onclick="calc()">
+</div>
+
+ <style type="text/css">
+    .display {
+        width: 20.5rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+    .button {
+        width: 5rem;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 0.5rem;
+    }
+    .button_two {
+        width: 10.3rem;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 0.5rem;
+    }
+ </style>
+   
+ <script language="javascript" type="text/javascript">
+    var result = document.getElementById("result");
+    function edit(elem) {
+      result.value = result.value + elem.value;
+    }
+    function calc() {
+      result.value = new Function("return " + result.value)();
+    }
+    function init(){  	//初期化、クリア
+    　result.value = ""
+    }
+ </script>
+</body>
+</html>
